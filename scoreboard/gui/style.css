@@ -1,0 +1,37 @@
+/* Fonte(s) */
+
+@font-face {
+	font-family: 'Ubuntu Light';
+	src: url('fonts/Ubuntu-L.ttf');
+}
+* {
+	font-family: 'Ubuntu Light';
+	font-size: 16px;
+}
+/* Scoreboard */
+
+#scoreboard {
+	background: rgba(230, 230, 230, 0.5);
+	width: 20%;
+	height: 50%;
+	margin: 15% auto;
+}
+#sb_status {
+	background: rgba(50, 140, 230, 0.7);
+	height: 10%;
+	font-size: 20px;
+	text-align: center;
+	line-height: 50px;
+}
+table
+{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+th {
+	font-weight: normal;
+}
+::-webkit-scrollbar {
+	display:  none;
+}
