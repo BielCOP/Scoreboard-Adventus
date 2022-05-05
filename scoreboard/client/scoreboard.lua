@@ -30,7 +30,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 
 		if NetworkIsSessionActive() then
-			if IsControlPressed(0, 303) then -- Tecla U
+			if IsControlJustPressed(0, 303) then -- Tecla U
 				SendNUIMessage({
 					type = 'scoreboard',
 					command = 'open'

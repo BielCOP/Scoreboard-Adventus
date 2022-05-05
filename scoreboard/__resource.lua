@@ -5,7 +5,8 @@ ui_page 'gui/index.html'
 files {
 	'gui/index.html',
 	'gui/style.css',
-	'gui/listener.js'
+	'gui/listener.js',
+	'fonts/Ubuntu-L.ttf'
 }
 
 server_script '@mysql-async/lib/MySQL.lua'

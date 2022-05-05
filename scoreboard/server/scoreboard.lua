@@ -15,20 +15,21 @@ AddEventHandler('server:updatePlayerList', function(name)
 		if result[1] then
 			local r = result[1]
 
-			table.insert(playerList, {
-				source = src,
+			playerList[src] = {
 				id = r.id,
-				nome = name,
+				nome = r.nome,
 				ping = GetPlayerPing(src)
-			})
+			}
 		end
 	end)
 end)
 
-AddEventHandler('playerDropped', function(source, reason)
+AddEventHandler('playerDropped', function(reason)
+	local src = source
+
 	for k, v in pairs(playerList) do
-		if v.source == source then
-			table.remove(playerList[k])
+		if k == src then
+			playerList[k] = nil
 		end
 	end
 end)
@@ -40,7 +41,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(1000)
 
 		for k, v in pairs(playerList) do
-			playerList[k].ping = GetPlayerPing(v.source)
+			playerList[k].ping = GetPlayerPing(k)
 		end
 
 		TriggerClientEvent('client:updateScoreboard', -1, playerList)
